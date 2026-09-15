@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Laundry Done Right</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+  }
+  header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+  }
+  header {
+  background-image: url(Images/laundry.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+  header img {
+    max-width: 150px;
+    height: auto;
+    margin-top: 10px;
+  }
+  nav {
+    display: flex;
+    justify-content: center;
+    background-color: #0056b3;
+    padding: 10px 0;
+  }
+  nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  nav a:hover {
+    color: #ffc107;
+    text-decoration: underline;
+  }
+  .hero {
+    background: url('Images/laundromat.jpg.webp') no-repeat center center/cover;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    position: relative;
+  }
+  .hero:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 123, 255, 0.5);
+  }
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 0 20px;
+  }
+  .hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+  }
+  .hero p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+  }
+  .cta-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  .cta-btn:hover {
+    background-color: #218838;
+  }
+  section {
+    padding: 40px 20px;
+    text-align: center;
+  }
+  .section h2 {
+    color: #007bff;
+    margin-bottom: 20px;
+  }
+  .services p,
+  .about p,
+  .contact p,
+  .faq p {
+    margin: 0 0 20px;
+    color: #555;
+    line-height: 1.6;
+  }
+  .services ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .services ul li {
+    margin: 10px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  .services ul li:hover {
+    transform: translateY(-5px);
+  }
+  .faq-item {
+    border: 1px solid #ddd;
+    margin: 10px 0;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: left;
+  }
+  .faq-item h3 {
+    color: #007bff;
+    margin-bottom: 10px;
+  }
+  .about img,
+  .contact img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  footer {
+    background-color: #0a2845;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+  }
+  footer p {
+    margin: 0;
+  }
+  .social-links {
+    margin-top: 10px;
+  }
+  .social-links a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  .social-links a:hover {
+    color: #007bff;
+  }
+  /* Contact Form Styles */
+  form {
+    width: 80%;
+    margin: 20px auto;
+    text-align: left;
+  }
+  label {
+    display: block;
+    margin-top: 10px;
+    color: #555;
+  }
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  textarea {
+    height: 150px;
+  }
+  button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+  }
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) {
+    .hero {
+      height: 400px;
+    }
+    .hero h1 {
+      font-size: 2.5em;
+    }
+    nav {
+      flex-direction: column;
+      align-items: center;
+    }
+    nav a {
+      margin: 5px 15px;
+    }
+    .services ul {
+      flex-direction: column;
+      align-items: center;
+    }
+    .services ul li {
+      width: 80%;
+    }
+    form {
+      width: 90%;
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Welcome to Laundry Done Right</h1>
+  <p>Your one-stop solution for clean, fresh laundry!</p>
+</header>
+<nav>
+  <a href="#home">Home</a>
+  <a href="#services">Services</a>
+  <a href="#about">About Us</a>
+  <a href="#faq">FAQ</a>
+  <a href="#contact">Contact</a>
+</nav>
+<main>
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Fast, Clean, Reliable</h1>
+      <p>Reliable, fast, and eco-friendly laundry services.</p>
+      <a href="#contact" class="cta-btn">Schedule a Pickup</a>
+    </div>
+  </section>
+  <section id="services" class="services">
+    <h2>Our Services</h2>
+    <ul>
+      <li>
+        <h3>Standard Laundry Service</h3>
+        <p>Wash, dry, and fold service for your everyday laundry needs.</p>
+      </li>
+      <li>
+        <h3>Wash & Fold</h3>
+        <p>Drop off your laundry and pick it up clean and folded. Affordable pricing with quick turnaround.</p>
+      </li>
+      <li>
+        <h3>Ironing & Pressing</h3>
+        <p>Shirts, pants, and other items professionally pressed.</p>
+      </li>
+      <li>
+        <h3>Pickup & Delivery</h3>
+        <p>Convenient laundry pickup and delivery service.</p>
+      </li>
+    </ul>
+  </section>
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>Laundry Done Right has been serving the community with top-notch laundry services for over a
+      decade. Our state-of-the-art machines and friendly staff ensure your laundry experience is
+      hassle-free and efficient. We are committed to providing exceptional service and a clean,
+      comfortable environment for all our customers.</p>
+    <p>We also offer specialized services such as dry cleaning and alterations. Our goal is to be your
+      one-stop shop for all your laundry needs. Visit us today and experience the difference!</p>
+    <img src="Images/laundry1.avif"alt="Laundry Service" />
+  </section>
+  <section id="faq" class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <h3>How do I schedule a pickup?</h3>
+      <p>Simply click the "Schedule a Pickup" button at the top of the page, and we'll arrange a
+        convenient time for you!</p>
+    </div>
+    <div class="faq-item">
+      <h3>Do you offer eco-friendly detergents?</h3>
+      <p>Yes, we use eco-friendly detergents for all our laundry services!</p>
+    </div>
+    <div class="faq-item">
+      <h3>What are your hours of operation?</h3>
+      <p>We are open Monday to Saturday from 7 AM to 9 PM, and Sunday from 9 AM to 7 PM.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Do you offer discounts for students or seniors?</h3>
+      <p>Yes, we offer a 10% discount for students and seniors. Please present a valid ID to redeem
+        the discount.</p>
+    </div>
+  </section>
+</main>
+<section id="contact" class="contact">
+  <h2>Contact Us</h2>
+  <p>Have questions or need to schedule a pickup? Contact us using the information below or fill out
+    the contact form.</p>
+  <p>Email: info@laundrydoneright.com</p>
+  <p>Phone: (123) 456-7890</p>
+  <p>Address: 123 Main Street, Anytown, USA</p>
+  <form action="#" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required />
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required />
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+<footer>
+  <p>&copy; 2024 Laundry Done Right. All rights reserved.</p>
+  <div class="social-links">
+    <a href="#">Facebook</a>
+    <a href="#">Twitter</a>
+    <a href="#">Instagram</a>
+  </div>
+</footer>
+</body>
+</html>
